@@ -49,6 +49,7 @@
   content: "\f003";
 }
 .icon-heart:before {
+  color: red;
   content: "\f004";
 }
 .icon-star:before {
