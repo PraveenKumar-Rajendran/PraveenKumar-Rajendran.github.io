@@ -1251,7 +1251,7 @@
 
         <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
+            <form action="submit-to-google-sheet" >
               <div class="form-group">
                 <input type="text" name="Name" class="form-control" placeholder="Your Name">
               </div>
@@ -1267,8 +1267,8 @@
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
-            </form>
-          
+			</form>
+
           </div>
 
           <div class="col-md-6 d-flex">
@@ -1356,6 +1356,21 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+ 
+  <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+  <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+  <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+  <script>
+	  const scriptURL = 'https://script.google.com/macros/s/AKfycbz67VUY1gRkzYTePHgyZMu7DufWednV438LxdygKdiB2yeatwZ9/exec'
+	  const form = document.forms['submit-to-google-sheet']
+	
+	  form.addEventListener('submit', e => {
+		e.preventDefault()
+		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		  .then(response => console.log('Success!', response))
+		  .catch(error => console.error('Error!', error.message))
+	  })
+  </script>
   <script src="https://www.retainable.io/assets/retainable/rss-embed/retainable-rss-embed.js"></script> 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
