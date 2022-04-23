@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arduino UNO | Praveen</title>
+    <link>https://praveenkumar-rajendran.github.io/tag/arduino-uno/</link>
+      <atom:link href="https://praveenkumar-rajendran.github.io/tag/arduino-uno/index.xml" rel="self" type="application/rss+xml" />
+    <description>Arduino UNO</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praveenkumar-rajendran.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Arduino UNO</title>
+      <link>https://praveenkumar-rajendran.github.io/tag/arduino-uno/</link>
+    </image>
+    
+    <item>
+      <title>Quadbot</title>
+      <link>https://praveenkumar-rajendran.github.io/project/a02_quad-legged-bot/</link>
+      <pubDate>Mon, 15 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>https://praveenkumar-rajendran.github.io/project/a02_quad-legged-bot/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

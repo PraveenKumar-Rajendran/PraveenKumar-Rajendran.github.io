@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROS, System Integration | Praveen</title>
+    <link>https://praveenkumar-rajendran.github.io/tag/ros-system-integration/</link>
+      <atom:link href="https://praveenkumar-rajendran.github.io/tag/ros-system-integration/index.xml" rel="self" type="application/rss+xml" />
+    <description>ROS, System Integration</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 30 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praveenkumar-rajendran.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>ROS, System Integration</title>
+      <link>https://praveenkumar-rajendran.github.io/tag/ros-system-integration/</link>
+    </image>
+    
+    <item>
+      <title>Capstone: Self-Driving Car</title>
+      <link>https://praveenkumar-rajendran.github.io/project/s09_self-driving-car-capstone/</link>
+      <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://praveenkumar-rajendran.github.io/project/s09_self-driving-car-capstone/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

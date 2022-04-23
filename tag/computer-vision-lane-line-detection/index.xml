@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer vision, Lane line detection | Praveen</title>
+    <link>https://praveenkumar-rajendran.github.io/tag/computer-vision-lane-line-detection/</link>
+      <atom:link href="https://praveenkumar-rajendran.github.io/tag/computer-vision-lane-line-detection/index.xml" rel="self" type="application/rss+xml" />
+    <description>Computer vision, Lane line detection</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 04 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praveenkumar-rajendran.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Computer vision, Lane line detection</title>
+      <link>https://praveenkumar-rajendran.github.io/tag/computer-vision-lane-line-detection/</link>
+    </image>
+    
+    <item>
+      <title>Advanced Lane Lines Finding</title>
+      <link>https://praveenkumar-rajendran.github.io/project/s02_advanced-lane-finding-sdcnd/</link>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://praveenkumar-rajendran.github.io/project/s02_advanced-lane-finding-sdcnd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Finding Lane Lines on the Road</title>
+      <link>https://praveenkumar-rajendran.github.io/project/s01_lane-line-detection-sdcnd/</link>
+      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://praveenkumar-rajendran.github.io/project/s01_lane-line-detection-sdcnd/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
