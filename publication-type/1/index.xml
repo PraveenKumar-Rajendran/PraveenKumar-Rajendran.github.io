@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>RELMOBNET: A Robust Two-Stage End-To-End Training Approach For MOBILENETV3 Based Relative Camera Pose Estimation</title>
+      <title>RelMobNet: End-to-end relative camera pose estimation using a robust two-stage training</title>
       <link>https://praveenkumar-rajendran.github.io/publication/relmobnet/</link>
       <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
       <guid>https://praveenkumar-rajendran.github.io/publication/relmobnet/</guid>
