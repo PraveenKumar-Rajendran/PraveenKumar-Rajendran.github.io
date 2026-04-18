@@ -4,6 +4,26 @@
    it into <main id="app">, then boots script.js
    ============================================ */
 
+/* ── Circular favicon ── */
+(function () {
+  const img = new Image();
+  img.src = 'profile.png';
+  img.onload = () => {
+    const size = 64;
+    const canvas = document.createElement('canvas');
+    canvas.width = canvas.height = size;
+    const ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.clip();
+    ctx.drawImage(img, 0, 0, size, size);
+    const link = document.querySelector("link[rel='icon']");
+    link.type = 'image/png';
+    link.href = canvas.toDataURL('image/png');
+  };
+})();
+
 const SECTIONS = [
   'hero',
   'about',

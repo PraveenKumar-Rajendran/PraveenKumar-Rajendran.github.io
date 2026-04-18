@@ -407,6 +407,51 @@ nav.scrolled {
   font-size: .95rem;
 }
 .about-text p strong { color: var(--text); }
+
+/* Beyond the code */
+.about-beyond {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.beyond-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.beyond-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.beyond-icon {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-top: .15rem;
+  flex-shrink: 0;
+}
+.beyond-item strong {
+  display: block;
+  font-size: .9rem;
+  color: var(--text);
+  margin-bottom: .25rem;
+}
+.beyond-item p {
+  font-size: .85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+.beyond-link {
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.beyond-link:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .beyond-items { grid-template-columns: 1fr; }
+}
+
 .skills-grid {
   display: flex;
   flex-direction: column;
