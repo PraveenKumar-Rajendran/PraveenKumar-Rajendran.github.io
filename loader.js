@@ -7,10 +7,11 @@
 const SECTIONS = [
   'hero',
   'about',
+  'education',
   'experience',
   'publications',
   'projects',
-  'education',
+  'awards',
   'certifications',
   'contact',
 ];

@@ -427,18 +427,39 @@ nav.scrolled {
   gap: .4rem;
 }
 .tag {
+  display: inline-flex;
+  align-items: center;
   font-size: .78rem;
   font-weight: 500;
   padding: .25rem .65rem;
   border-radius: 99px;
-  background: var(--surface);
+  background: #fff;
   border: 1px solid var(--border);
-  color: var(--text-muted);
+  color: #1a1a2e;
   transition: all var(--transition);
 }
 .tag:hover {
   border-color: var(--accent);
   color: var(--accent);
+  background: #fff;
+}
+.tag-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-right: 5px;
+  /* white box — remove with tag-icon-plain */
+  background: #fff;
+  border-radius: 4px;
+  padding: 2px;
+  box-sizing: content-box;
+}
+/* add class="tag-icon tag-icon-plain" to skip white box for a specific tile */
+.tag-icon-plain {
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 /* ==============================
@@ -475,7 +496,7 @@ nav.scrolled {
   border-left-color: var(--accent);
   box-shadow: -3px 0 16px var(--accent-glow2);
 }
-.tl-left { flex: 1; }
+.tl-left { flex: 1; display: flex; align-items: center; gap: .9rem; }
 .tl-role {
   font-size: 1rem;
   font-weight: 600;
@@ -555,8 +576,18 @@ nav.scrolled {
 .pub-card {
   padding: 1.2rem 1.5rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.2rem;
+}
+.pub-card::before {
+  content: '';
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: #fff url(assets/ArXiv.svg) no-repeat center;
+  background-size: 80%;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
 }
 .pub-index {
   font-size: 1.5rem;
@@ -697,10 +728,9 @@ nav.scrolled {
 }
 .edu-card {
   padding: 1.3rem 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: .5rem 1.5rem;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
 .edu-degree {
   font-size: .95rem;
@@ -718,12 +748,42 @@ nav.scrolled {
   color: var(--text-muted);
   margin-top: .35rem;
 }
+/* Expandable edu cards */
+.edu-expandable { cursor: pointer; }
+.edu-expand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.edu-expand-header .edu-card-left { flex: 1; min-width: 0; }
+.edu-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .4rem;
+  flex-shrink: 0;
+}
 .edu-date {
   font-size: .8rem;
   color: var(--text-muted);
-  text-align: right;
   white-space: nowrap;
 }
+.edu-chevron {
+  color: var(--text-muted);
+  font-size: .9rem;
+  transition: transform var(--transition);
+}
+.edu-expandable.open .edu-chevron { transform: rotate(180deg); }
+.edu-expand-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.edu-expandable.open .edu-expand-body { max-height: 4000px; }
+.edu-expandable:hover { border-color: var(--border-bright); }
+.edu-expandable.open  { border-left: 3px solid var(--accent); box-shadow: -3px 0 16px var(--accent-glow2); }
+
 .edu-sub-list {
   margin-top: .8rem;
   border-top: 1px solid var(--border);
@@ -738,6 +798,10 @@ nav.scrolled {
   color: var(--text-muted);
   padding-left: .8rem;
   border-left: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
 }
 .edu-sub-item strong { color: var(--text); }
 .edu-sub-links {
@@ -757,6 +821,99 @@ nav.scrolled {
   background: var(--accent-glow2);
   text-decoration: none;
 }
+
+/* ── Institution logo chip (leading) + name badge (trailing) ── */
+
+/* Easy size control — change this one value */
+:root { --chip-size: 50px; }
+
+/* Leading logo chip via ::before on the row */
+.edu-sub-item:has(.inst-name-badge)::before {
+  content: '';
+  width: var(--chip-size);
+  height: var(--chip-size);
+  flex-shrink: 0;
+  order: -1;
+  background: #fff no-repeat center;
+  background-size: 80%;
+  border: 1.5px solid var(--accent);
+  border-radius: 6px;
+}
+.edu-sub-item:has(.inst-google)::before    { background-image: url(assets/google.svg); }
+.edu-sub-item:has(.inst-meta)::before      { background-image: url(assets/meta.svg); }
+.edu-sub-item:has(.inst-dlai)::before      { background-image: url(assets/deeplearning-ai.svg); }
+.edu-sub-item:has(.inst-stanford)::before  { background-image: url(assets/stanford.svg); }
+.edu-sub-item:has(.inst-udacity)::before   { background-image: url(assets/udacity.svg); }
+.edu-sub-item:has(.inst-alexa)::before     { background-image: url(assets/amazonalexa.svg); }
+.edu-sub-item:has(.inst-mercedes)::before  { background-image: url(assets/mercedes.svg); }
+.edu-sub-item:has(.inst-nvidia)::before    { background-image: url(assets/nvidia.svg); }
+.edu-sub-item:has(.inst-appen)::before     { background-image: url(assets/appen.svg); }
+
+/* Trailing name badge */
+.inst-name-badge {
+  font-size: .68rem;
+  font-weight: 600;
+  padding: .15rem .45rem;
+  border-radius: 999px;
+  order: 2;
+  white-space: nowrap;
+}
+.inst-name-badge.inst-google   { background: rgba(66,133,244,.15);  color: #4285F4; border: 1px solid rgba(66,133,244,.3); }
+.inst-name-badge.inst-meta     { background: rgba(0,130,251,.15);   color: #0082FB; border: 1px solid rgba(0,130,251,.3); }
+.inst-name-badge.inst-dlai     { background: rgba(0,166,160,.15);   color: #00A6A0; border: 1px solid rgba(0,166,160,.3); }
+.inst-name-badge.inst-stanford { background: rgba(140,21,21,.15);   color: #c0392b; border: 1px solid rgba(140,21,21,.3); }
+.inst-name-badge.inst-udacity  { background: rgba(0,180,255,.15);   color: #00B4FF; border: 1px solid rgba(0,180,255,.3); }
+.inst-name-badge.inst-alexa    { background: rgba(0,160,220,.15);   color: #00A0DC; border: 1px solid rgba(0,160,220,.3); }
+.inst-name-badge.inst-mercedes { background: rgba(150,150,150,.15); color: #aaa;    border: 1px solid rgba(150,150,150,.3); }
+.inst-name-badge.inst-nvidia   { background: rgba(118,185,0,.15);   color: #76B900; border: 1px solid rgba(118,185,0,.3); }
+.inst-name-badge.inst-appen    { background: rgba(255,90,0,.15);    color: #FF5A00; border: 1px solid rgba(255,90,0,.3); }
+
+/* Institution logos — education cards */
+.edu-card-left {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+.inst-logo-wrap {
+  background: #fff;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: .5rem;
+}
+.inst-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Company logos — experience timeline */
+.tl-logo-wrap {
+  background: #fff;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: .5rem;
+}
+.tl-logo-dark { background: var(--surface); }
+.tl-company-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .cert-title a {
   color: var(--text);
   transition: color var(--transition);
@@ -777,8 +934,27 @@ nav.scrolled {
 .cert-card {
   padding: 1.1rem 1.3rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
+}
+.cert-logo-wrap {
+  background: #fff;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: .4rem;
+  margin-left: auto;
+}
+.cert-logo-dark { background: var(--surface); }
+.cert-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .cert-icon {
   font-size: 1.3rem;
@@ -869,8 +1045,7 @@ footer a:hover { color: var(--accent); }
   .hero-ctas { justify-content: center; }
   .hero-badge { margin: 0 auto 1.2rem; }
   .hero-summary { margin: 0 auto 2rem; }
-  .edu-card { grid-template-columns: 1fr; }
-  .edu-date { text-align: left; }
+  .edu-header-right { display: none; }
 }
 @media (max-width: 640px) {
   .nav-links { display: none; }

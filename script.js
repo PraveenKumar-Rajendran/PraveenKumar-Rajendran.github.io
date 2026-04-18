@@ -76,6 +76,15 @@ document.querySelectorAll('.timeline-header').forEach(header => {
 // Open first one by default
 document.querySelector('.timeline-item')?.classList.add('open');
 
+/* ── Education expand/collapse ── */
+document.querySelectorAll('.edu-expandable').forEach(card => {
+  card.querySelector('.edu-expand-header')?.addEventListener('click', () => {
+    card.classList.toggle('open');
+  });
+});
+// Open first expandable by default
+document.querySelector('.edu-expandable')?.classList.add('open');
+
 /* ── Project filter ── */
 const filterTabs  = document.querySelectorAll('.filter-tab');
 const projectCards = document.querySelectorAll('.project-card');
