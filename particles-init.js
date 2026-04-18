@@ -4,6 +4,8 @@
    ============================================ */
 
 function initParticles() {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
   // Attach canvas to body so it covers ALL sections
   const canvas = document.createElement('canvas');
   canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;';
