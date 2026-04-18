@@ -556,6 +556,8 @@ nav.scrolled {
 .tl-meta {
   text-align: right;
   flex-shrink: 0;
+  max-width: 160px;
+  word-break: break-word;
 }
 .tl-date {
   font-size: .8rem;
