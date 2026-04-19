@@ -414,43 +414,22 @@ nav.scrolled {
   padding-top: 2rem;
   border-top: 1px solid var(--border);
 }
-.beyond-items {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+.beyond-prose {
+  max-width: 72ch;
 }
-.beyond-item {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
-.beyond-icon {
-  font-size: 1.4rem;
-  color: var(--accent);
-  margin-top: .15rem;
-  flex-shrink: 0;
-}
-.beyond-item strong {
-  display: block;
-  font-size: .9rem;
-  color: var(--text);
-  margin-bottom: .25rem;
-}
-.beyond-item p {
-  font-size: .85rem;
+.beyond-prose p {
+  font-size: .95rem;
   color: var(--text-muted);
-  line-height: 1.6;
-  margin: 0;
+  line-height: 1.85;
+  margin-bottom: 1rem;
 }
+.beyond-prose p:last-child { margin-bottom: 0; }
+.beyond-prose strong { color: var(--text); }
 .beyond-link {
   color: var(--accent);
   text-decoration: none;
-  white-space: nowrap;
 }
 .beyond-link:hover { text-decoration: underline; }
-@media (max-width: 768px) {
-  .beyond-items { grid-template-columns: 1fr; }
-}
 
 .skills-grid {
   display: flex;
@@ -1111,21 +1090,22 @@ footer a:hover { color: var(--accent); }
   .nav-links.open a { padding: .75rem; font-size: .95rem; }
   section { padding: 4rem 0; }
 
-  /* Timeline: stack header — date·location on top row, role below */
-  .timeline-header { flex-wrap: wrap; gap: .5rem; }
-  .tl-left { width: 100%; order: 2; align-items: flex-start; }
-  .tl-logo-wrap { display: none; }
+  /* Timeline: shrink logo, stack date/location below role+company */
+  .timeline-header { flex-wrap: wrap; gap: .5rem; padding: .9rem 1rem; }
+  .tl-left { flex: 1; min-width: 0; }
+  .tl-logo-wrap { width: 44px; height: 44px; padding: .3rem; }
   .tl-meta {
-    order: 1;
+    width: 100%;
+    order: 3;
     text-align: left;
     max-width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: .4rem;
+    gap: .35rem;
     flex-wrap: wrap;
+    align-items: center;
+    padding-left: 50px;
   }
   .tl-date { margin-bottom: 0; }
   .tl-location::before { content: '·'; margin-right: .2rem; }
-  .tl-chevron { order: 1; margin-left: auto; }
+  .tl-chevron { order: 2; }
 }
