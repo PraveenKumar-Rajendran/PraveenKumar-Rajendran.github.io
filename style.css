@@ -1110,4 +1110,22 @@ footer a:hover { color: var(--accent); }
   }
   .nav-links.open a { padding: .75rem; font-size: .95rem; }
   section { padding: 4rem 0; }
+
+  /* Timeline: stack header — date·location on top row, role below */
+  .timeline-header { flex-wrap: wrap; gap: .5rem; }
+  .tl-left { width: 100%; order: 2; align-items: flex-start; }
+  .tl-logo-wrap { display: none; }
+  .tl-meta {
+    order: 1;
+    text-align: left;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .4rem;
+    flex-wrap: wrap;
+  }
+  .tl-date { margin-bottom: 0; }
+  .tl-location::before { content: '·'; margin-right: .2rem; }
+  .tl-chevron { order: 1; margin-left: auto; }
 }
